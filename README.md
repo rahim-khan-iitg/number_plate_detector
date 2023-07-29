@@ -1,7 +1,5 @@
 # Number Plate Detector with YOLOv5 Model and Django
 
-![Number Plate Detector](images/demo.png)
-
 ## Table of Contents
 
 - [Introduction](#introduction)
