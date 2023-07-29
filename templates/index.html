@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Number Plate Detector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container d-block m-4">
+        <div class="container d-block">
+            <div class="row g-3 align-items-center">
+                <div class="row">
+                    <h2>Upload Image</h2>
+                </div>
+                <div class="col">
+                    <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{image.as_p}}
+                        <button type="submit" class="btn btn-success mb-2">Analyze</button>
+                        <br>
+                    </form>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center" style="max-width: 500px; max-height: 500px;">
+                <div class="col">
+                    <img src="{{encoded_image}}" alt="no image uploaded till now" class="form-control">
+                    <br>
+                </div>
+            </div>
+            <div class="row mt-3 g-3 align-items-center">
+                <div class="col-3">
+                    <label for="" class="form-control">{{text}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        image = document.getElementById('id_image')
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>
