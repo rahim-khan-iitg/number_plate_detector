@@ -2,7 +2,8 @@ django
 # easyocr
 # YOLOv5 requirements
 # Usage: pip install -r requirements.txt
-torch==2.0.0+cpu torchvision==0.15.1+cpu  --index-url https://download.pytorch.org/whl/cpu
+torch==2.0.0+cpu 
+torchvision==0.15.1+cpu
 # Base ------------------------------------------------------------------------
 gitpython>=3.1.30
 matplotlib>=3.3
